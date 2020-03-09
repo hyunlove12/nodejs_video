@@ -4,6 +4,7 @@ import Axios from 'axios'
 import SideVideo from './section/SideVideo'
 import Subscribe from './section/Subscribe'
 import Comment from './section/Comment'
+import LikeDislikes from './section/LikeDislikes'
 
 // 클래스 방식에서는 생성자로 props
 function VideoDetailPage(props) {
@@ -50,7 +51,7 @@ function VideoDetailPage(props) {
                     <div style={{ width : '100%', padding : '3rem 4rem'}} >
                         <video style={{ width : '100%'}} src={`http://localhost:5000/${VideoDetail.filePath}`} controls />
                         <List.Item
-                            actions={[sbuscribeButton]}
+                            actions={[ <LikeDislikes video userId={localStorage.getItem('userId')} videoId={videoId} />, sbuscribeButton ]}
                         >
                             <List.Item.Meta
                                 avatar={<Avatar src={VideoDetail.writer.image} />}

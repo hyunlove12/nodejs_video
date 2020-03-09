@@ -35,7 +35,7 @@ function Subscribe(props) {
                 }
             })
             
-    })
+    }, [])
 
     const onSubscribe = (e) => {        
 
